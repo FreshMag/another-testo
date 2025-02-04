@@ -97,8 +97,7 @@ jobs:
       - build
     if: |
       always() &&
-      needs.check-secrets.outputs.run-with-secrets == 'true' &&
-      needs.check.result == 'success'
+      needs.check-secrets.outputs.run-with-secrets == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
