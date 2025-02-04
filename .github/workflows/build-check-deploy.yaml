@@ -79,7 +79,7 @@ jobs:
 #        working-directory: common
       - name: Install dependencies and run tests
         run: |
-          cd common && npm build && npm test --passWithNoTests
+          cd common && npm run build && npm run test --passWithNoTests
 #          cd api && npm build && npm test --passWithNoTests
 #          cd ../auth && npm build && npm test --passWithNoTests
 
