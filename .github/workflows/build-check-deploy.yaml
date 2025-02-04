@@ -52,10 +52,11 @@ jobs:
         with:
           cache: npm
           node-version: lts/*
-      - run: cd ${{ matrix.submodule }}
-      - run: npm clean-install
-      - run: npm run lint:check
-      - run: npm run format:check
+      - run: |-
+          cd ${{ matrix.submodule }}
+          npm clean-install
+          npm run lint:check
+          npm run format:check
 
   build:
     strategy:
