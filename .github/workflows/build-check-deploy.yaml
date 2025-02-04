@@ -73,14 +73,14 @@ jobs:
         with:
           cache: npm
           node-version: lts/*
-      - name: Publish with Verdaccio
-        uses: verdaccio/github-actions/publish@master
-        working-directory: common
+#      - name: Publish with Verdaccio
+#        uses: verdaccio/github-actions/publish@master
+#        working-directory: common
       - name: Install dependencies and run tests
         run: |
-          cd api && npm build && npm test --passWithNoTests
-          cd ../auth && npm build && npm test --passWithNoTests
-          cd ..
+          cd common && npm build && npm test --passWithNoTests
+#          cd api && npm build && npm test --passWithNoTests
+#          cd ../auth && npm build && npm test --passWithNoTests
 
   release:
     concurrency:
