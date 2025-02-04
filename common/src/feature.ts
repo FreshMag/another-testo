@@ -8,5 +8,6 @@ export function formatDate(date: string | number | Date) {
     month: "long",
     day: "numeric",
   };
-  return new Date(date).toLocaleDateString(undefined, options);
+  return new Date(date).toLocaleDateString("it-IT", options);
 }
+
