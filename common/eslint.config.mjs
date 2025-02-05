@@ -9,7 +9,7 @@ export default typescriptEslint.config(
             eslint.configs.recommended,
             ...typescriptEslint.configs.recommended,
         ],
-        files: ['**/*.{ts,vue}'],
+        files: ['**/*.ts'],
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
