@@ -80,8 +80,8 @@ jobs:
       - name: Install dependencies for API project
         run: |
           cd api
-          npm install core --registry http://localhost:4873/
           npm ci
+          npm install core --registry http://localhost:4873/
 
       - name: Run tests
         run: |
