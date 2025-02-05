@@ -38,6 +38,47 @@ jobs:
 #        with:
 #          github-token: ${{ github.token }}
 
+  test:
+    runs-on: ubuntu-latest
+    services:
+      verdaccio:
+        image: verdaccio/verdaccio
+        ports:
+          - 4873:4873
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Wait for Verdaccio to be ready
+        run: |
+          for i in {1..30}; do
+            if curl --silent --fail http://localhost:4873/-/ping; then
+              echo "Verdaccio is ready!"
+              exit 0
+            fi
+            echo "Waiting for Verdaccio..."
+            sleep 2
+          done
+          echo "Verdaccio did not start in time" >&2
+          exit 1
+
+      - name: Publish local package
+        run: |
+          cd common
+          npm publish --registry http://localhost:4873/
+
+      - name: Install dependencies for API project
+        run: |
+          cd api
+          npm install core --registry http://localhost:4873/
+          npm install
+
+      - name: Run tests
+        run: |
+          cd api
+          npm test
+
   check:
     strategy:
       matrix:

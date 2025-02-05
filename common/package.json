@@ -7,14 +7,15 @@
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "prepublishOnly": "npm run build",
     "lint:fix": "eslint src/ --fix",
     "lint:check": "eslint src/",
     "format:write": "prettier --write src/",

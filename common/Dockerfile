@@ -1,23 +1,25 @@
-# --- Stage 1: Build TypeScript project ---
-FROM node:23-alpine AS builder
+# Docker multi-stage build - https://docs.docker.com/develop/develop-images/multistage-build/
+# Use an alpine node image to install the plugin
+FROM node:lts-alpine as builder
 
-WORKDIR /app
+RUN mkdir -p /verdaccio/plugins \
+  && cd /verdaccio/plugins \
+  && npm install --global-style --no-bin-links --omit=optional verdaccio-auth-memory@latest
 
-COPY package.json package-lock.json tsconfig.json ./
-COPY src ./src
+FROM verdaccio/verdaccio:5
 
-RUN npm install && npx tsc
+# copy your modified config.yaml into the image
+ADD conf/config.yaml /verdaccio/conf/config.yaml
+ADD conf/htpasswd /verdaccio/conf/htpasswd
 
-# --- Stage 2: Use Verdaccio and publish the package ---
-FROM verdaccio/verdaccio:latest
+# copy the plugins from the builder image
+COPY storage /verdaccio/storage
 
-WORKDIR /app
+# need it for install global plugins
+USER root
+# install plugins with npm global
+RUN npm install --global verdaccio-static-token \
+  && npm install --global verdaccio-auth-memory
 
-# Copy built package from the builder stage
-COPY --from=builder /app/package.json /app/package-lock.json ./
-COPY --from=builder /app/dist /app/dist
-
-EXPOSE 4873
-
-CMD ["verdaccio"]
-
+# back to original user
+USER $VERDACCIO_USER_UID
