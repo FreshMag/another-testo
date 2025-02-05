@@ -73,7 +73,7 @@ jobs:
       - name: Publish local package
         run: |
           cd common
-          npm ci
+          npm install
           npm publish --registry http://localhost:4873/
 
       - name: Install dependencies for API project
