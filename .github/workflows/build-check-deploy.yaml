@@ -40,15 +40,18 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    services:
-      verdaccio:
-        image: verdaccio/verdaccio
-        ports:
-          - 4873:4873
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Build Verdaccio Docker Image
+        run: |
+          docker build -t my-verdaccio -f verdaccio.Dockerfile .
+
+      - name: Run Verdaccio Container
+        run: |
+          docker run -d --name verdaccio -p 4873:4873 my-verdaccio
 
       - name: Wait for Verdaccio to be ready
         run: |
