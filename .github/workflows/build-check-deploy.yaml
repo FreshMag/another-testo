@@ -79,8 +79,7 @@ jobs:
       - name: Install dependencies for API project
         run: |
           cd api
-          npm ci
-          npm install core --registry http://localhost:4873/
+          npm install --registry http://localhost:4873/
 
       - name: Run tests
         run: |
