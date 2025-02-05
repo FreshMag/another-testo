@@ -142,6 +142,7 @@ jobs:
     runs-on: ubuntu-24.04
     needs:
       - check-secrets
+      - test-and-check
 #      - precompute-next-version
       #- release
 #    if: |
