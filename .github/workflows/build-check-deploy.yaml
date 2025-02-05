@@ -81,9 +81,13 @@ jobs:
           cd api
           npm install --registry http://localhost:4873/
 
-      - name: Run tests
+      - name: Run tests inside api project
         run: |
-          cd api && npm run lint:check && npm run format:check && npm test && npm run build
+          cd api
+          npm run lint:check
+          npm run format:check
+          npm test 
+          npm run build
 # add more tests if needed
 #          cd auth && npm run lint:check && npm run format:check && npm test
 

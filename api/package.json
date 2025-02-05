@@ -5,6 +5,7 @@
   "engines": {
     "node": "22.12"
   },
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
