@@ -63,6 +63,15 @@ jobs:
           echo "Verdaccio did not start in time" >&2
           exit 1
 
+      - name: Configure npm to use Verdaccio
+        run: |
+          npm set registry http://localhost:4873/
+          npm adduser --registry http://localhost:4873/ --always-auth=true <<EOF
+          testuser
+          testpass
+          testemail@example.com
+          EOF
+
       - name: Publish local package
         run: |
           cd common
