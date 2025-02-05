@@ -46,6 +46,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Run tests on the common project
+        run: |
+          cd common
+          npm install
+          npm run lint:check
+          npm run format:check
+          npm test
+
       - name: Build Verdaccio Docker Image
         run: |
           cd common
@@ -73,7 +81,6 @@ jobs:
       - name: Publish local package
         run: |
           cd common
-          npm install
           npm publish --registry http://localhost:4873/
 
       - name: Install dependencies for API project
