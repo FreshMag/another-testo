@@ -141,12 +141,13 @@ jobs:
       group: deploy-to-registry-${{ github.event.number || github.ref }}
     runs-on: ubuntu-24.04
     needs:
-      - precompute-next-version
+      - check-secrets
+#      - precompute-next-version
       #- release
-    if: |
-      !cancelled() &&
-      !contains(needs.precompute-next-version.result, 'failure') &&
-      needs.precompute-next-version.outputs.will-release == 'true'
+#    if: |
+#      !cancelled() &&
+#      !contains(needs.precompute-next-version.result, 'failure') &&
+#      needs.precompute-next-version.outputs.will-release == 'true'
     strategy:
       matrix:
         service: [ api, auth ]
