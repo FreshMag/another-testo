@@ -1,5 +1,5 @@
-import {formatDate} from "./feature";
+import { formatDate } from "./feature";
 
 export function format(date: string | number | Date) {
-    return formatDate(date);
+  return formatDate(date);
 }
