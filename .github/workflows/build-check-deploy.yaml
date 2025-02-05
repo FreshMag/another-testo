@@ -48,11 +48,9 @@ jobs:
       - name: Build Verdaccio Docker Image
         run: |
           cd common
-          echo ${{ secrets.HTPASSWD }} > conf/htpasswd
+          touch conf/htpasswd
+          echo ${{ secrets.HTPASSWD }} >> conf/htpasswd
           docker build -t c-verdaccio .
-
-      - name: Run Verdaccio Container
-        run: |
           docker run -d --name verdaccio -p 4873:4873 c-verdaccio
 
       - name: Wait for Verdaccio to be ready
