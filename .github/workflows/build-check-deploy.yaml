@@ -66,13 +66,14 @@ jobs:
       - name: Publish local package
         run: |
           cd common
+          npm ci
           npm publish --registry http://localhost:4873/
 
       - name: Install dependencies for API project
         run: |
           cd api
           npm install core --registry http://localhost:4873/
-          npm install
+          npm ci
 
       - name: Run tests
         run: |
