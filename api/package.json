@@ -23,7 +23,7 @@
   "description": "",
   "dependencies": {
     "@babel/preset-typescript": "^7.26.0",
-    "core": "^1.0.0",
+    "subjekt-core": "^1.0.0",
     "express": "^4.21.2",
     "http-status-codes": "^2.3.0"
   },
