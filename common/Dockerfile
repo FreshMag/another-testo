@@ -10,7 +10,6 @@ FROM verdaccio/verdaccio:5
 
 # copy your modified config.yaml into the image
 ADD conf/config.yaml /verdaccio/conf/config.yaml
-ADD conf/htpasswd /verdaccio/conf/htpasswd
 
 # need it for install global plugins
 USER root
