@@ -12,9 +12,6 @@ FROM verdaccio/verdaccio:5
 ADD conf/config.yaml /verdaccio/conf/config.yaml
 ADD conf/htpasswd /verdaccio/conf/htpasswd
 
-# copy the plugins from the builder image
-COPY storage /verdaccio/storage
-
 # need it for install global plugins
 USER root
 # install plugins with npm global

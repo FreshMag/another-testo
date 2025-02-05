@@ -48,6 +48,7 @@ jobs:
       - name: Build Verdaccio Docker Image
         run: |
           cd common
+          echo ${{ secrets.HTPASSWD }} > conf/htpasswd
           docker build -t c-verdaccio .
 
       - name: Run Verdaccio Container
