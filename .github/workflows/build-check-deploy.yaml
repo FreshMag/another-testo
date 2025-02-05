@@ -66,6 +66,14 @@ jobs:
           echo "Verdaccio did not start in time" >&2
           exit 1
 
+      - name: Configure npm to use Verdaccio
+        run: |
+          npm adduser --registry http://localhost:4873/ <<EOF
+          freshmag
+          ${{ secrets.VERDACCIO_PASSWD }}
+          pescomagnani@gmail.com
+          EOF
+
       - name: Publish local package
         run: |
           cd common
