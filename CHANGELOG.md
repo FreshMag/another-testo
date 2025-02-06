@@ -1,3 +1,9 @@
+## [1.0.18](https://github.com/FreshMag/another-testo/compare/1.0.17...1.0.18) (2025-02-06)
+
+### Bug Fixes
+
+* added needs ([71fca58](https://github.com/FreshMag/another-testo/commit/71fca586b4ed61812b749c70b762ac26af6e42ca))
+
 ## [1.0.17](https://github.com/FreshMag/another-testo/compare/1.0.16...1.0.17) (2025-02-06)
 
 ### Bug Fixes
