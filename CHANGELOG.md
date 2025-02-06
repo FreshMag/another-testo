@@ -1,3 +1,9 @@
+## [1.0.12](https://github.com/FreshMag/another-testo/compare/1.0.11...1.0.12) (2025-02-06)
+
+### Bug Fixes
+
+* removed provenance and removed temporarily test-and-check job ([8276120](https://github.com/FreshMag/another-testo/commit/827612030e31022d017165e5fb2d50b9005deb70))
+
 ## [1.0.11](https://github.com/FreshMag/another-testo/compare/1.0.10...1.0.11) (2025-02-06)
 
 ### Bug Fixes
