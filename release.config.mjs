@@ -1,7 +1,8 @@
 const publishCmd = `
 cd common
 npm install
-npm version $SEMANTIC_RELEASE_NEXT_VERSION
+echo $SEMANTIC_RELEASE_NEXT_VERSION
+npm version "$SEMANTIC_RELEASE_NEXT_VERSION"
 npm publish --access public
 `
 
