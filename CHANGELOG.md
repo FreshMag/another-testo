@@ -1,3 +1,9 @@
+## [1.0.10](https://github.com/FreshMag/another-testo/compare/1.0.9...1.0.10) (2025-02-06)
+
+### Bug Fixes
+
+* added repository to global package.json ([2ea34bd](https://github.com/FreshMag/another-testo/commit/2ea34bdb2eaed345e0c4c62d23b801e82b5f3dc5))
+
 ## [1.0.9](https://github.com/FreshMag/another-testo/compare/1.0.8...1.0.9) (2025-02-06)
 
 ### Bug Fixes
