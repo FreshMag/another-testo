@@ -1,3 +1,9 @@
+## [1.0.15](https://github.com/FreshMag/another-testo/compare/1.0.14...1.0.15) (2025-02-06)
+
+### Bug Fixes
+
+* debug semantic release ([6f55b35](https://github.com/FreshMag/another-testo/commit/6f55b35e6fcaef5e8b5f3696ae8885b688914c24))
+
 ## [1.0.14](https://github.com/FreshMag/another-testo/compare/1.0.13...1.0.14) (2025-02-06)
 
 ### Bug Fixes
