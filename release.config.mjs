@@ -2,7 +2,7 @@ const publishCmd = `
 cd common
 npm install
 npm version $SEMANTIC_RELEASE_NEXT_VERSION
-npm publish --access public
+npm publish --provenance --access public
 `
 
 import config from 'semantic-release-preconfigured-conventional-commits' with { type: "json" };
