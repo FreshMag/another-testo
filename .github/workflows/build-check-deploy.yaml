@@ -100,6 +100,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+      id-token: write
     runs-on: ubuntu-24.04
     needs:
       - check-secrets
@@ -145,6 +146,7 @@ jobs:
     if: |
       !cancelled() &&
       !contains(needs.precompute-next-version.result, 'failure') &&
+      !contains(needs.release.result, 'failure') &&
       needs.precompute-next-version.outputs.will-release == 'true'
     strategy:
       matrix:
