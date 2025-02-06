@@ -3,6 +3,9 @@
   "devDependencies": {
     "semantic-release-preconfigured-conventional-commits": "1.1.121"
   },
+  "repository": {
+    "url": "https://github.com/FreshMag/another-testo"
+  },
   "engines": {
     "node": "22.13.1"
   },
