@@ -1,3 +1,9 @@
+## [1.0.14](https://github.com/FreshMag/another-testo/compare/1.0.13...1.0.14) (2025-02-06)
+
+### Bug Fixes
+
+* trying re-adding npm install ([598dcf6](https://github.com/FreshMag/another-testo/commit/598dcf6b1e97d83a19cffc87744032410ce547bb))
+
 ## [1.0.13](https://github.com/FreshMag/another-testo/compare/1.0.12...1.0.13) (2025-02-06)
 
 ### Bug Fixes
