@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/FreshMag/another-testo/compare/1.0.1...1.0.2) (2025-02-06)
+
+### Bug Fixes
+
+* removed useless rm ([66dad34](https://github.com/FreshMag/another-testo/commit/66dad34b391c799c6b526804d266e7c3a12f15f9))
+
+### Build and continuous integration
+
+* removed useless comment ([5b6b283](https://github.com/FreshMag/another-testo/commit/5b6b2832e2f8c70709a7fcf23efa0609c7be115a))
+
 ## [1.0.1](https://github.com/FreshMag/another-testo/compare/1.0.0...1.0.1) (2025-02-06)
 
 ### Bug Fixes
