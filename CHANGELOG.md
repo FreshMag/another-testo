@@ -1,3 +1,9 @@
+## [1.0.16](https://github.com/FreshMag/another-testo/compare/1.0.15...1.0.16) (2025-02-06)
+
+### Bug Fixes
+
+* change publishCmd ([c6c32b8](https://github.com/FreshMag/another-testo/commit/c6c32b8dbb635b015198d93ca3c3c8c0b3bebaa3))
+
 ## [1.0.15](https://github.com/FreshMag/another-testo/compare/1.0.14...1.0.15) (2025-02-06)
 
 ### Bug Fixes
