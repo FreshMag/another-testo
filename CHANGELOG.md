@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/FreshMag/another-testo/compare/1.0.6...1.0.7) (2025-02-06)
+
+### Bug Fixes
+
+* added auth token in ci ([1605f99](https://github.com/FreshMag/another-testo/commit/1605f99f904a64261cde0b98931ca4cb61cf9b78))
+
 ## [1.0.6](https://github.com/FreshMag/another-testo/compare/1.0.5...1.0.6) (2025-02-06)
 
 ### Bug Fixes
