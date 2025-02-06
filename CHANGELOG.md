@@ -1,3 +1,9 @@
+## [1.0.8](https://github.com/FreshMag/another-testo/compare/1.0.7...1.0.8) (2025-02-06)
+
+### Bug Fixes
+
+* removed publish config in package.json ([296a09e](https://github.com/FreshMag/another-testo/commit/296a09e97866dd9a34f08d1e38ec076bc9f3077f))
+
 ## [1.0.7](https://github.com/FreshMag/another-testo/compare/1.0.6...1.0.7) (2025-02-06)
 
 ### Bug Fixes
