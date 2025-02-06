@@ -1,3 +1,9 @@
+## [1.0.11](https://github.com/FreshMag/another-testo/compare/1.0.10...1.0.11) (2025-02-06)
+
+### Bug Fixes
+
+* added repository to common package.json ([417dbaa](https://github.com/FreshMag/another-testo/commit/417dbaa02b37a6075c9640e53ae739429ac9886d))
+
 ## [1.0.10](https://github.com/FreshMag/another-testo/compare/1.0.9...1.0.10) (2025-02-06)
 
 ### Bug Fixes
