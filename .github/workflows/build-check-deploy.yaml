@@ -40,6 +40,10 @@ jobs:
 
   test-and-check:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: [ api ]
+
     needs:
       - check-secrets
     steps:
@@ -50,15 +54,12 @@ jobs:
         run: |
           cd common
           npm install
-          npm run lint:check
-          npm run format:check
-          npm test
+          npm run check
 
-      - name: Build Verdaccio Docker Image
+      - name: Set up Verdaccio
         run: |
-          cd common
-          docker build -t c-verdaccio .
-          docker run -d --name verdaccio -p 4873:4873 c-verdaccio
+          npm install -g verdaccio
+          nohup verdaccio --config common/conf/config.yaml > verdaccio.log 2>&1 &
 
       - name: Wait for Verdaccio to be ready
         run: |
@@ -78,33 +79,29 @@ jobs:
           echo "//localhost:4873/:_authToken=\"fake-token\"" > ~/.npmrc
           echo "always-auth=true" >> ~/.npmrc
 
-      - name: Publish local package
+      - name: Publish common package
         run: |
           cd common
           npm publish --registry http://localhost:4873/
 
-      - name: Install dependencies for API project
+      - name: Install dependencies
         run: |
-          cd api
+          cd ${{ matrix.module }}
+          rm package-lock.json
           npm install --registry http://localhost:4873/
 
-      - name: Run tests inside api project
-        run: |
-          cd api
-          npm run lint:check
-          npm run format:check
-          npm test 
-          npm run build
-# add more tests if needed
-#          cd auth && npm run lint:check && npm run format:check && npm test
+      - name: Run checks
+        run: cd ${{ matrix.module }} && npm run check
+
 
   release:
     concurrency:
       # Only one release job at a time per branch, as only master releases.
-      # Strictly sequential.
       group: release-${{ github.event.number || github.ref }}
     permissions:
       contents: write
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-24.04
     needs:
       - check-secrets
@@ -116,8 +113,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
-          token: ${{ secrets.DEPLOYMENT_TOKEN }}
-      - uses: actions/setup-node@v4.1.0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4.2.0
         with:
           cache: npm
           node-version: lts/*
@@ -131,7 +128,6 @@ jobs:
           npx semantic-release
 
   deploy-to-registry:
-
     permissions:
       contents: read
       packages: write
@@ -143,12 +139,12 @@ jobs:
     needs:
       - check-secrets
       - test-and-check
-#      - precompute-next-version
-      #- release
-#    if: |
-#      !cancelled() &&
-#      !contains(needs.precompute-next-version.result, 'failure') &&
-#      needs.precompute-next-version.outputs.will-release == 'true'
+      - precompute-next-version
+      - release
+    if: |
+      !cancelled() &&
+      !contains(needs.precompute-next-version.result, 'failure') &&
+      needs.precompute-next-version.outputs.will-release == 'true'
     strategy:
       matrix:
         service: [ api, auth ]
@@ -156,19 +152,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Log in to the Container registry
-        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        uses: docker/login-action@327cd5a69de6c009b9ce71bce8395f28e651bf99
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        uses: docker/metadata-action@8e1d5461f02b7886d3c1a774bfbd873650445aa2
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-${{ matrix.service }}
       - name: Build and push Docker image
         id: push
-        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        uses: docker/build-push-action@ca877d9245402d1537745e0e356eab47c3520991
         with:
           context: ${{ matrix.service }}
           push: true
