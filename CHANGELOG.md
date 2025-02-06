@@ -1,3 +1,9 @@
+## [1.0.13](https://github.com/FreshMag/another-testo/compare/1.0.12...1.0.13) (2025-02-06)
+
+### Bug Fixes
+
+* trying removing npm install inside release.config.mjs ([340a76b](https://github.com/FreshMag/another-testo/commit/340a76b120f4e7e50cb52171a0cae80d7efb1846))
+
 ## [1.0.12](https://github.com/FreshMag/another-testo/compare/1.0.11...1.0.12) (2025-02-06)
 
 ### Bug Fixes
