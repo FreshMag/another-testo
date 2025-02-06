@@ -4,9 +4,6 @@
   "engines": {
     "node": "22.12"
   },
-  "publishConfig": {
-    "registry": "http://localhost:4873"
-  },
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
