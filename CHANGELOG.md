@@ -1,3 +1,13 @@
+## [1.0.4](https://github.com/FreshMag/another-testo/compare/1.0.3...1.0.4) (2025-02-06)
+
+### Bug Fixes
+
+* removed comment ([22a2f7a](https://github.com/FreshMag/another-testo/commit/22a2f7a10bda8e3c7ad748fdedd325f9e4094032))
+
+### Build and continuous integration
+
+* fixed release.config.mjs ([56446b4](https://github.com/FreshMag/another-testo/commit/56446b421974d01a8e02e5f1b8557ffe8ca78e27))
+
 ## [1.0.3](https://github.com/FreshMag/another-testo/compare/1.0.2...1.0.3) (2025-02-06)
 
 ### Bug Fixes
