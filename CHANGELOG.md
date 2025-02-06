@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/FreshMag/another-testo/compare/1.0.5...1.0.6) (2025-02-06)
+
+### Bug Fixes
+
+* added options to setup-node step in release job ([e47a5cd](https://github.com/FreshMag/another-testo/commit/e47a5cd1fdd6f29f517b55760251bf7b4a72f012))
+
 ## [1.0.5](https://github.com/FreshMag/another-testo/compare/1.0.4...1.0.5) (2025-02-06)
 
 ### Bug Fixes
