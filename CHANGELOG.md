@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/FreshMag/another-testo/compare/1.0.2...1.0.3) (2025-02-06)
+
+### Bug Fixes
+
+* updated import ([3347991](https://github.com/FreshMag/another-testo/commit/3347991c4daa7c8246b3c4131e85fd46d8bbd0b9))
+
 ## [1.0.2](https://github.com/FreshMag/another-testo/compare/1.0.1...1.0.2) (2025-02-06)
 
 ### Bug Fixes
