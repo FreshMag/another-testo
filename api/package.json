@@ -5,6 +5,9 @@
   "engines": {
     "node": "22.12"
   },
+  "repository": {
+    "url": "https://github.com/FreshMag/another-testo"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
