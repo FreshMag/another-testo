@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/FreshMag/another-testo/compare/1.0.8...1.0.9) (2025-02-06)
+
+### Bug Fixes
+
+* fixed permissions for release job ([4fd6029](https://github.com/FreshMag/another-testo/commit/4fd6029a28836135465204dc7ff3e78769e335e0))
+
 ## [1.0.8](https://github.com/FreshMag/another-testo/compare/1.0.7...1.0.8) (2025-02-06)
 
 ### Bug Fixes
