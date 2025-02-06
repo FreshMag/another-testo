@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/FreshMag/another-testo/compare/1.0.16...1.0.17) (2025-02-06)
+
+### Bug Fixes
+
+* change publishCmd ([74e8558](https://github.com/FreshMag/another-testo/commit/74e8558fa5ce1b0baa57daff8efb7486214dddf9))
+* try adding next version as an environment ([481447a](https://github.com/FreshMag/another-testo/commit/481447a621e68722a9fe05e147c3d7ba85d9df4b))
+
 ## [1.0.16](https://github.com/FreshMag/another-testo/compare/1.0.15...1.0.16) (2025-02-06)
 
 ### Bug Fixes
