@@ -1,3 +1,13 @@
+## [1.0.1](https://github.com/FreshMag/another-testo/compare/1.0.0...1.0.1) (2025-02-06)
+
+### Bug Fixes
+
+* added check command ([ed84538](https://github.com/FreshMag/another-testo/commit/ed845381bbdbca11b1bb18817485625ac9631f5a))
+
+### Build and continuous integration
+
+* fixed name of release.config.mjs ([159acac](https://github.com/FreshMag/another-testo/commit/159acac6c2e164ccdfda24d3965edcb62930ea98))
+
 ## 1.0.0 (2025-02-06)
 
 ### Features
